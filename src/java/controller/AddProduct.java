@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller;
+package Controller;
 
 import DAO.OrderDAO;
 import DAO.ProductDAO;
@@ -21,7 +21,7 @@ import model.Product;
 
 /**
  *
- * @author PC
+ * @author Happy-2001
  */
 public class AddProduct extends HttpServlet {
 
