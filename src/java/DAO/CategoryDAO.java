@@ -17,7 +17,7 @@ import model.Category;
 
 /**
  *
- * @author Happy-2001
+ * @author PC 
  */
 public class CategoryDAO {
     //Thao tác với bảng Category

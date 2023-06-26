@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author PC
+ * @author PC PC
  */
 public class DBConnect {
     public Connection getConnection() throws Exception {
