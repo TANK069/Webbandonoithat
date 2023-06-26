@@ -19,7 +19,7 @@ import model.Cart;
 
 /**
  *
- * @author Happy-2001
+ * @author PC 
  */
 public class CheckOutController extends HttpServlet {
 
