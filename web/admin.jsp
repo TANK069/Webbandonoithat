@@ -131,10 +131,10 @@
 				<div class="col-lg-6">
 					<div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
 						<ul>
-							<li><a href="https://www.facebook.com/profile.php?id=100014453103092" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="https://github.com/PC" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-							<li><a href="https://www.instagram.com/th.buta/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-							<li><a href="https://www.pinterest.com/Dinos0801/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.facebook.com/kenjaaaa/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="https://github.com/Tank069" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.instagram.com/VDZ/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.pinterest.com/nhockanhvd/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
 						</ul>
 					</div>
 				</div>

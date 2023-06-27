@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Colo Shop Product</title>
+        <title>Solo Shop Product</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="Colo Shop Template">
@@ -116,10 +116,10 @@
 				<div class="col-lg-6">
 					<div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
 						<ul>
-							<li><a href="https://www.facebook.com/profile.php?id=100014453103092" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.facebook.com/kenjaaaa/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 							<li><a href="https://github.com/PC" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-							<li><a href="https://www.instagram.com/th.buta/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-							<li><a href="https://www.pinterest.com/Dinos0801/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.instagram.com/VDZ/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.pinterest.com/nhockanhvd/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -127,7 +127,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="footer_nav_container">
-						<div class="cr">©2020 All Rights Reserverd. Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://github.com/PC">Đào Phúc Thạch</a> &amp; distributed by <a href="home">ColoShop</a></div>
+						<div class="cr">©2023 All Rights Reserverd. Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://github.com/PC">Nguyễn Tuấn Anh</a> &amp; distributed by <a href="home">ColoShop</a></div>
 					</div>
 				</div>
 			</div>

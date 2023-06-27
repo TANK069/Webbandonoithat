@@ -14,7 +14,7 @@
 <title>Colo Shop</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Colo Shop Template">
+<meta name="description" content="Solo Shop Template">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -82,7 +82,7 @@
 				<div class="row">
 					<div class="col-lg-12 text-right">
 						<div class="logo_container">
-							<a href="home">colo<span>shop</span></a>
+							<a href="home">Solo<span>shop</span></a>
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">
@@ -268,10 +268,10 @@
 				<div class="col-lg-6">
 					<div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
 						<ul>
-							<li><a href="https://www.facebook.com/profile.php?id=100014453103092" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="https://github.com/Happy-2001" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-							<li><a href="https://www.instagram.com/th.buta/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-							<li><a href="https://www.pinterest.com/Dinos0801/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.facebook.com/kenjaaaa/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="https://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.instagram.com/VDZ/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.pinterest.com/nhockanhvd/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -279,7 +279,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="footer_nav_container">
-						<div class="cr">©2020 All Rights Reserverd. Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://github.com/Happy-2001">Đào Phúc Thạch</a> &amp; distributed by <a href="home">ColoShop</a></div>
+						<div class="cr">©2023 All Rights Reserverd. Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://github.com/TANK069">Nguyễn Tuấn Anh</a> &amp; distributed by <a href="home">ColoShop</a></div>
 					</div>
 				</div>
 			</div>
