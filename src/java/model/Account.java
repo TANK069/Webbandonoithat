@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author Happy-2001
+ * @author PC 
  */
 public class Account {
     private int id;
