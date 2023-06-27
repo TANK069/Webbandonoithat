@@ -26,8 +26,8 @@ public class DBConnect {
     private final String serverName = "localhost";
     private final String dbName = "Shopping";
     private final String portNumber = "1433";
-    private final String userID = "nta";
-    private final String password = "010503";
+    private final String userID = "sa";
+    private final String password = "123456";
 
     public static void main(String[] args) {
         try {

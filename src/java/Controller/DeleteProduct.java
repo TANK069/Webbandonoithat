@@ -16,7 +16,7 @@ import model.Product;
 
 /**
  *
- * @author Happy-2001
+ * @author PC 
  */
 public class DeleteProduct extends HttpServlet {
 

@@ -5,7 +5,6 @@
  */
 package Controller;
 
-import DAO.CategoryDAO;
 import DAO.ProductDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,14 +13,13 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Category;
 import model.Product;
 
 /**
  *
  * @author PC 
  */
-public class FilterCategory extends HttpServlet {
+public class FilterNewArrivals extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,14 +34,22 @@ public class FilterCategory extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            int categoryid = Integer.parseInt(request.getParameter("id"));
-            ProductDAO dao = new ProductDAO();
-            CategoryDAO u = new CategoryDAO();
-            List<Product> listPro= dao.getProbyID(categoryid);
-            List<Category> list = u.getallCat();
-            request.setAttribute("ListC", list);
-            request.setAttribute("ListP", listPro);
-            request.getRequestDispatcher("product.jsp").forward(request, response);
+            /* TODO output your page here. You may use following sample code. */
+           String name = request.getParameter("name");
+           ProductDAO dao = new ProductDAO();
+           if(name.equalsIgnoreCase("livingroom") || name.isEmpty()){
+               List<Product> listPro= dao.getProbyCategoryid(6,7);
+               request.setAttribute("ListP", listPro);
+           }
+           if(name.equalsIgnoreCase("bedroom")){
+               List<Product> listPro= dao.getProbyCategoryid(1,2);
+               request.setAttribute("ListP", listPro);
+           }
+           if(name.equalsIgnoreCase("office")){
+               List<Product> listPro= dao.getProbyCategoryid(10,8);
+               request.setAttribute("ListP", listPro);
+           }
+           request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
 

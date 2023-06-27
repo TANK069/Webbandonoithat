@@ -5,23 +5,20 @@
  */
 package Controller;
 
-import DAO.CategoryDAO;
 import DAO.ProductDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Category;
 import model.Product;
 
 /**
  *
  * @author PC 
  */
-public class FilterCategory extends HttpServlet {
+public class ItemServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,14 +33,14 @@ public class FilterCategory extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            int categoryid = Integer.parseInt(request.getParameter("id"));
-            ProductDAO dao = new ProductDAO();
-            CategoryDAO u = new CategoryDAO();
-            List<Product> listPro= dao.getProbyID(categoryid);
-            List<Category> list = u.getallCat();
-            request.setAttribute("ListC", list);
-            request.setAttribute("ListP", listPro);
-            request.getRequestDispatcher("product.jsp").forward(request, response);
+            /* TODO output your page here. You may use following sample code. */
+            int ProductID = Integer.parseInt(request.getParameter("Product"));
+            ProductDAO pro = new ProductDAO();
+            Product product = pro.getOneProbyID(ProductID);
+            request.setAttribute("product", product);
+            request.getSession().setAttribute("URLHistory", "item?Product="+product.getId());
+            request.getRequestDispatcher("item.jsp").forward(request, response);
+            
         }
     }
 

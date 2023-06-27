@@ -5,23 +5,19 @@
  */
 package Controller;
 
-import DAO.CategoryDAO;
-import DAO.ProductDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Category;
-import model.Product;
+import jakarta.servlet.http.HttpSession;
 
 /**
  *
  * @author PC 
  */
-public class FilterCategory extends HttpServlet {
+public class logout extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,14 +32,10 @@ public class FilterCategory extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            int categoryid = Integer.parseInt(request.getParameter("id"));
-            ProductDAO dao = new ProductDAO();
-            CategoryDAO u = new CategoryDAO();
-            List<Product> listPro= dao.getProbyID(categoryid);
-            List<Category> list = u.getallCat();
-            request.setAttribute("ListC", list);
-            request.setAttribute("ListP", listPro);
-            request.getRequestDispatcher("product.jsp").forward(request, response);
+            HttpSession session = request.getSession();
+            Object objacc = session.getAttribute("account");
+            session.removeAttribute("account");
+            response.sendRedirect("login");
         }
     }
 

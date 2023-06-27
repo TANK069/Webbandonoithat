@@ -14,6 +14,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import model.Account;
 import model.Category;
 import model.Product;
 
@@ -21,7 +23,7 @@ import model.Product;
  *
  * @author PC 
  */
-public class FilterCategory extends HttpServlet {
+public class HomeController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,16 +37,18 @@ public class FilterCategory extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            int categoryid = Integer.parseInt(request.getParameter("id"));
-            ProductDAO dao = new ProductDAO();
-            CategoryDAO u = new CategoryDAO();
-            List<Product> listPro= dao.getProbyID(categoryid);
-            List<Category> list = u.getallCat();
-            request.setAttribute("ListC", list);
-            request.setAttribute("ListP", listPro);
-            request.getRequestDispatcher("product.jsp").forward(request, response);
+        ProductDAO dao = new ProductDAO();
+        List<Product> listPro = dao.getProbyCategoryid(6, 7);
+        request.setAttribute("ListP", listPro);
+        HttpSession session = request.getSession();
+        Object objacc = session.getAttribute("account");
+        if(objacc!=null){
+            Account acc = (Account) objacc;
+            request.setAttribute("disname", acc.getDisplayname());
+            request.setAttribute("roll", acc.getRollid());
         }
+        request.getSession().setAttribute("URLHistory", "home");
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import DAO.CategoryDAO;
+import DAO.OrderDAO;
 import DAO.ProductDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,14 +14,16 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Category;
+import jakarta.servlet.http.HttpSession;
+import model.Account;
+import model.Order;
 import model.Product;
 
 /**
  *
  * @author PC 
  */
-public class FilterCategory extends HttpServlet {
+public class managerOrders extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,14 +38,20 @@ public class FilterCategory extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            int categoryid = Integer.parseInt(request.getParameter("id"));
-            ProductDAO dao = new ProductDAO();
-            CategoryDAO u = new CategoryDAO();
-            List<Product> listPro= dao.getProbyID(categoryid);
-            List<Category> list = u.getallCat();
-            request.setAttribute("ListC", list);
-            request.setAttribute("ListP", listPro);
-            request.getRequestDispatcher("product.jsp").forward(request, response);
+             /* TODO output your page here. You may use following sample code. */
+            HttpSession session = request.getSession();
+            Object objacc = session.getAttribute("account");
+            if (objacc != null) {
+                Account acc = (Account) objacc;
+                if (acc.getRollid() == 2) {
+                    OrderDAO order = new OrderDAO();
+                    List<Order> listo = order.getallorder();
+                    request.setAttribute("ListO", listo);
+                    request.getRequestDispatcher("managerOrders.jsp").forward(request, response);
+                }  
+                
+            } 
+            response.sendRedirect("login");
         }
     }
 

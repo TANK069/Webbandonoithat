@@ -5,23 +5,22 @@
  */
 package Controller;
 
-import DAO.CategoryDAO;
-import DAO.ProductDAO;
+import DAO.LoginDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Category;
-import model.Product;
+import jakarta.servlet.http.HttpSession;
+import model.Account;
+import model.SendMail;
 
 /**
  *
  * @author PC 
  */
-public class FilterCategory extends HttpServlet {
+public class ForgotController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,14 +35,7 @@ public class FilterCategory extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            int categoryid = Integer.parseInt(request.getParameter("id"));
-            ProductDAO dao = new ProductDAO();
-            CategoryDAO u = new CategoryDAO();
-            List<Product> listPro= dao.getProbyID(categoryid);
-            List<Category> list = u.getallCat();
-            request.setAttribute("ListC", list);
-            request.setAttribute("ListP", listPro);
-            request.getRequestDispatcher("product.jsp").forward(request, response);
+            request.getRequestDispatcher("forgot.jsp").forward(request, response);
         }
     }
 
@@ -73,7 +65,33 @@ public class FilterCategory extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+        String mail = request.getParameter("mail");
+        SendMail sendmail = new SendMail();
+        LoginDAO loginDAO = new LoginDAO();
+        Account acc = loginDAO.getAccountByMail(mail);
+        String subject = "Your account has been processing.";
+        String message = "<!DOCTYPE html>\n"
+                + "<html lang=\"en\">\n"
+                + "\n"
+                + "<head>\n"
+                + "</head>\n"
+                + "\n"
+                + "<body>\n"
+                + "    <h3 style=\"color: blue;\">Your account has been processing.</h3>\n"
+                + "    <div>User Name :" + acc.getName() + "</div>\n"
+                + "    <div>Password :" + acc.getPassword() + "</div>\n"
+                + "    <div>Name : " + acc.getDisplayname() + "</div>\n"
+                + "    <div>address : " + acc.getAddress() + "</div>\n"
+                + "    <div>Phone : " + acc.getPhone() + "</div>\n"
+                + "    <h3 style=\"color: blue;\">Thank you very much!</h3>\n"
+                + "\n"
+                + "</body>\n"
+                + "\n"
+                + "</html>";
+        SendMail.send(mail, subject, message, "thachdp2808@gmail.com", "Phucthach2k1");
+        response.sendRedirect("login");
+
     }
 
     /**
